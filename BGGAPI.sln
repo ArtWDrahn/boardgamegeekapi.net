@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGGAPI", "BGG\BGGAPI.csproj", "{1DCD7C60-E4E6-431F-B73B-7DEB0007617A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{17CC9BD3-489F-40B2-B646-808D370DD259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGGAPI_UnitTests", "BGGAPI_UnitTests\BGGAPI_UnitTests.csproj", "{A6D12547-CBCA-456D-806C-B752E77E6666}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DCD7C60-E4E6-431F-B73B-7DEB0007617A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DCD7C60-E4E6-431F-B73B-7DEB0007617A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DCD7C60-E4E6-431F-B73B-7DEB0007617A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DCD7C60-E4E6-431F-B73B-7DEB0007617A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17CC9BD3-489F-40B2-B646-808D370DD259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CC9BD3-489F-40B2-B646-808D370DD259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CC9BD3-489F-40B2-B646-808D370DD259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CC9BD3-489F-40B2-B646-808D370DD259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6D12547-CBCA-456D-806C-B752E77E6666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D12547-CBCA-456D-806C-B752E77E6666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D12547-CBCA-456D-806C-B752E77E6666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D12547-CBCA-456D-806C-B752E77E6666}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
