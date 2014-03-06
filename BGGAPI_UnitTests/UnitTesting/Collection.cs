@@ -69,7 +69,49 @@
         [TestMethod]
         public void Collection_YearIsNotNull()
         {
-            Assert.IsNotNull(CollectionReturn.Items[0].Name);
+            Assert.IsNotNull(CollectionReturn.Items[0].YearPublished);
+        }
+
+        [TestMethod]
+        public void Collection_ImageIsNotNull()
+        {
+            Assert.IsNotNull(CollectionReturn.Items[0].Image);
+        }
+
+        [TestMethod]
+        public void Collection_ThumbnailIsNotNull()
+        {
+            Assert.IsNotNull(CollectionReturn.Items[0].Thumbnail);
+        }
+
+        [TestMethod]
+        public void Collection_NumPlaysIsNotNull()
+        {
+            Assert.IsNotNull(CollectionReturn.Items[0].NumPlays);
+        }
+
+        [TestMethod]
+        public void Collection_StatusIsNotNull()
+        {
+            Assert.IsNotNull(CollectionReturn.Items[0].Status);
+        }
+
+        [TestMethod]
+        public void Collection_Status_OwnIsNotNull()
+        {
+            Assert.IsNotNull(CollectionReturn.Items[0].Status.Own);
+        }
+
+        [TestMethod]
+        public void Collection_Status_PrevOwnedIsNotNull()
+        {
+            Assert.IsNotNull(CollectionReturn.Items[0].Status.PreviouslyOwned);
+        }
+
+        [TestMethod]
+        public void Collection_Status_ForTradeIsNotNull()
+        {
+            Assert.IsNotNull(CollectionReturn.Items[0].Status.ForTrade);
         }
     }
 }

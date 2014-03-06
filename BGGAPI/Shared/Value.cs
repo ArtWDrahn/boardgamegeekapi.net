@@ -1,8 +1,10 @@
 ﻿namespace BGGAPI.Shared
 {
     using System;
-    using System.Security.AccessControl;
 
+    /// <summary>
+    /// Used when the api returns an XML with a value name.
+    /// </summary>
     public class StringValue
     {
         public string value { get; set; }

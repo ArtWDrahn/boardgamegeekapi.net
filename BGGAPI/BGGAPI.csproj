@@ -66,6 +66,8 @@
     <Compile Include="Thing\Request.cs" />
     <Compile Include="Thing\ThingReturn.cs" />
     <Compile Include="Thing\Optional.cs" />
+    <Compile Include="Users\Request.cs" />
+    <Compile Include="Users\UserReturn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

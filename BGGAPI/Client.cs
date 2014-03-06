@@ -66,6 +66,25 @@
         /// <summary>
         /// Requests information about specific BGG objects
         /// </summary>
+        /// <param name="userRequest">
+        /// The user Request.
+        /// </param>
+        /// <returns>
+        /// Details on the requested objects
+        /// </returns>
+        public Users.UserReturn GetUser(Users.Request userRequest)
+        {
+            if (userRequest.Name == null)
+            {
+                throw new ArgumentException("Null name in userRequest");
+            }
+
+            return CallBGG<Users.UserReturn>("user", userRequest);
+        }
+
+        /// <summary>
+        /// Requests information about specific BGG objects
+        /// </summary>
         /// <param name="thingsRequest">Details of the request</param>
         /// <returns>Details on the requested objects</returns>
         public Dictionary<int, List<Comment>> GetComments(Thing.Request thingsRequest)
