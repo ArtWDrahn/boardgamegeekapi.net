@@ -50,8 +50,11 @@
     <Compile Include="Client.cs" />
     <Compile Include="Collection\Collection.cs" />
     <Compile Include="Collection\Request.cs" />
-    <Compile Include="Constants.cs" />
     <Compile Include="Collection\Item.cs" />
+    <Compile Include="Family\Return.cs" />
+    <Compile Include="Family\Item.cs" />
+    <Compile Include="Family\Request.cs" />
+    <Compile Include="Url.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Collection\Stats.cs" />

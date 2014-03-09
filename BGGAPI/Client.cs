@@ -1,4 +1,15 @@
-﻿namespace BGGAPI
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Client.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   Establishes the Client class for interacting with Board Game Geek.
+//   This is just a start and currently all methods for interacting with the objects are stored here.
+//   A refactoring of this is likely in order as the
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI
 {
     using System;
     using System.Collections.Generic;
@@ -82,6 +93,16 @@
             return CallBGG<Users.UserReturn>("user", userRequest);
         }
 
+        public Family.Return GetFamily(Family.Request familyRequest)
+        {
+            if (familyRequest.ID == null)
+            {
+                throw new ArgumentException("Null ID in familyRequest");
+            }
+
+            return CallBGG<Family.Return>("family", familyRequest);
+        }
+
         /// <summary>
         /// Requests information about specific BGG objects
         /// </summary>
@@ -134,7 +155,7 @@
         /// </exception>
         private static T CallBGG<T>(string resource, object request) where T : new()
         {
-            var client = new RestClient { BaseUrl = Constants.BoardGameUrl };
+            var client = new RestClient { BaseUrl = Url.BoardGameUrl };
 
             // http://technet.weblineindia.com/web/basics-of-restsharp-in-dot-net/2/
             // client.CookieContainer = new System.Net.CookieContainer();

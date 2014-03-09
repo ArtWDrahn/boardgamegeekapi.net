@@ -1,21 +1,48 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UserRequest.cs" company="Tyson J. Hayes" />
+// <summary>
+//   Does integration tests the BGGAPI.Users.Request by calling out to BGG and parsing over live data.
+//   The user that was selected was done so randomly as they actually had most of the fields to parse over.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace BGGAPI_UnitTests.Integration
 {
+    using System;
+
     using BGGAPI;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class UserRequest
     {
+        /// <summary>
+        /// Gets or sets the user object that is parsed over.
+        /// </summary>
         private static BGGAPI.Users.UserReturn UserReturn { get; set; }
 
+        /// <summary>
+        /// Gets or sets the list item that is randomly parsed over.
+        /// </summary>
         private static int ListItem { get; set; }
 
+        /// <summary>
+        /// Gets or sets the buddy item that is randomly parsed over.
+        /// </summary>
         private static int BuddyItem { get; set; }
 
+        /// <summary>
+        /// Gets or sets the guild item that is randomly parsed over.
+        /// </summary>
         private static int GuildItem { get; set; }
 
+        /// <summary>
+        /// The setup of the User Tests.
+        /// </summary>
+        /// <param name="testContext">
+        /// The test context.  Not actually used.
+        /// </param>
         [ClassInitialize]
         public static void Setup(TestContext testContext)
         {
@@ -36,14 +63,20 @@ namespace BGGAPI_UnitTests.Integration
             UserReturn = client.GetUser(userRequest);
         }
 
+        /// <summary>
+        /// Check that the user returned id is not null.
+        /// </summary>
         [TestMethod]
-        public void User_ReturnedID_IsNotNull()
+        public void UserReturnedIDIsNotNull()
         {
             Assert.IsNotNull(UserReturn.ID);
         }
 
+        /// <summary>
+        /// Check that the user returned name is not null.
+        /// </summary>
         [TestMethod]
-        public void User_ReturnedName_IsNotNull()
+        public void UserReturnedNameIsNotNull()
         {
             Assert.IsNotNull(UserReturn.Name);
         }

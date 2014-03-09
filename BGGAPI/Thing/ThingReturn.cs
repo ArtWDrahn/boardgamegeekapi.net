@@ -103,27 +103,6 @@ namespace BGGAPI.Thing
     }
 
     /// <summary>
-    /// The name of the Item.
-    /// </summary>
-    public class Name
-    {
-        /// <summary>
-        /// Gets or sets the type.
-        /// </summary>
-        public string Type { get; set; }
-
-        /// <summary>
-        /// Gets or sets the sort index.
-        /// </summary>
-        public int SortIndex { get; set; }
-
-        /// <summary>
-        /// Gets or sets the value.
-        /// </summary>
-        public string value { get; set; }
-    }
-
-    /// <summary>
     /// The polls that have been returned.
     /// </summary>
     public class Poll

@@ -21,12 +21,23 @@ namespace BGGAPI.Users
         private int page = 1;
 
         /// <summary>
-        /// Controls the domain for the users hot 10 and top 10 lists. The DOMAIN default is boardgame.
+        /// Controls the domain for the users hot 10 and top 10 lists. The DOMAIN default is board game.
         /// </summary>
         public enum Domain
         {
+            /// <summary>
+            /// The boardgame domain.
+            /// </summary>
             boardgame,
+
+            /// <summary>
+            /// The rpg domain.
+            /// </summary>
             rpg,
+
+            /// <summary>
+            /// The videogame domain.
+            /// </summary>
             videogame
         }
 

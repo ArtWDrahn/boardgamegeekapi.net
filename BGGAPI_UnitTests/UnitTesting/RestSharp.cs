@@ -9,9 +9,12 @@ namespace BGGAPI_UnitTests.UnitTesting
     using System.Net;
     using System.Xml.Linq;
 
+    using BGGAPI;
+
     using Moq;
 
     using global::RestSharp;
+    using BGG;
 
     /// <summary>
     /// Summary description for RestSharp
@@ -75,22 +78,22 @@ namespace BGGAPI_UnitTests.UnitTesting
         }
 
         [TestMethod]
-        public void RestSharpStuff()
+        public void Collection_UnitTest()
         {
-            // string testData = XDocument.Load(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, this.testDataRelativePath)).ToString();
+            // Read in the XML Data
             string testData = XDocument.Load(Path.GetFullPath(@"D:\GitHub\BGGAPI\BGGAPI_UnitTests\Files\Collection_User.xml")).ToString();
 
+            // Mock IRestClient to return the testData instead of the BGG data.
             var mock = new Mock<IRestClient>();
-            mock.Setup(x => x.Execute(It.IsAny<IRestRequest>()))
+            mock.Setup(x => x.Execute(It.IsAny<RestRequest>()))
             .Returns(new RestResponse
             {
                 StatusCode = HttpStatusCode.OK,
-                Content = testData
+                Content = testData,
             });
 
             var request = new RestRequest();
             var response = mock.Object.Execute<BGGAPI.Collection.Collection>(request);
-
             Assert.IsTrue(response.Data.TotalItems > 0);
         }
 

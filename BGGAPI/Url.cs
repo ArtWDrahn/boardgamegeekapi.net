@@ -1,11 +1,20 @@
-ï»¿
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Url.cs" company="Tyson J. Hayes">
+//   © 2013 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The Board Game Geek sites contain a number of different sites with various titles in play.
+//   The URLs to access these sites are listed below.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace BGGAPI
 {
     /// <summary>
     /// The Board Game Geek sites contain a number of different sites with various titles in play.
     /// The URLs to access these sites are listed below.
     /// </summary>
-    internal class Constants
+    internal class Url
     {
         /// <summary>
         /// The board game geek url.
