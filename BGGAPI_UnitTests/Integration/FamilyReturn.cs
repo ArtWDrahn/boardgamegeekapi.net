@@ -61,8 +61,8 @@ namespace BGGAPI_UnitTests.Integration
         /// </summary>
         private static int NameCount { get; set; }
 
-            /// <summary>
-        /// The setup of the User Tests.
+        /// <summary>
+        /// The setup of the Family Return Tests.
         /// </summary>
         /// <param name="testContext">
         /// The test context.  Not actually used.

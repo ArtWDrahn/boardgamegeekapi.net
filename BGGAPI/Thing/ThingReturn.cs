@@ -7,6 +7,7 @@
 
 namespace BGGAPI.Thing
 {
+    using System;
     using System.Collections.Generic;
 
     using BGGAPI.Shared;
@@ -27,8 +28,24 @@ namespace BGGAPI.Thing
     /// </summary>
     public class Item
     {
+        /// <summary>
+        /// The thumbnail backing field.
+        /// </summary>
+        private string thumbnail;
+
+        /// <summary>
+        /// The image backing field.
+        /// </summary>
+        private string image;
+
+        /// <summary>
+        /// Gets or sets the type of item.
+        /// </summary>
         public string Type { get; set; }
 
+        /// <summary>
+        /// Gets or sets the id for the item.
+        /// </summary>
         public int ID { get; set; }
 
         /// <summary>
@@ -43,13 +60,46 @@ namespace BGGAPI.Thing
 
         /// <summary>
         /// Gets or sets the thumbnail.
+        /// This should always be a URI returned.
         /// </summary>
-        public string Thumbnail { get; set; }
+        public string Thumbnail
+        {
+            get
+            {
+                return this.thumbnail;
+            }
+
+            set
+            {
+                if (!Uri.IsWellFormedUriString(value, UriKind.Absolute))
+                {
+                    return;
+                }
+
+                this.thumbnail = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the image.
         /// </summary>
-        public string Image { get; set; }
+        public string Image
+        {
+            get
+            {
+                return this.image;
+            }
+
+            set
+            {
+                if (!Uri.IsWellFormedUriString(value, UriKind.Absolute))
+                {
+                    return;
+                }
+
+                this.image = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the year published.
@@ -67,11 +117,6 @@ namespace BGGAPI.Thing
         public IntValue MaxPlayers { get; set; }
 
         /// <summary>
-        /// Gets or sets the suggested number of players.
-        /// </summary>
-        public List<Poll> Polls { get; set; }
-
-        /// <summary>
         /// Gets or sets the playing time.
         /// </summary>
         public IntValue PlayingTime { get; set; }
@@ -80,6 +125,11 @@ namespace BGGAPI.Thing
         /// Gets or sets the min age.
         /// </summary>
         public IntValue MinAge { get; set; }
+
+        /// <summary>
+        /// Gets or sets the suggested number of players.
+        /// </summary>
+        public List<Poll> Polls { get; set; }
 
         /// <summary>
         /// Gets or sets the links for the thing.
