@@ -3,7 +3,10 @@
 //   © 2014 - Refer to the License.md for the project.
 // </copyright>
 // <summary>
-//   Defines the Collection type.
+//  Integration for the Collection request.
+//  <see cref="Request"/> for the request code.
+//  <see cref="Return"/> for the returned object.
+//  <see cref="Item"/> for the specific items returned.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
