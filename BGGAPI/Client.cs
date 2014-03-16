@@ -49,14 +49,14 @@ namespace BGGAPI
         /// </summary>
         /// <param name="collectionRequest">Details of the request</param>
         /// <returns>Details of the user's collection</returns>
-        public Collection.Collection GetCollection(Collection.Request collectionRequest)
+        public Collection.Return GetCollection(Collection.Request collectionRequest)
         {
             if (string.IsNullOrEmpty(collectionRequest.UserName))
             {
                 throw new ArgumentException("Null or empty username in collectionRequest");
             }
 
-            return CallBGG<Collection.Collection>("collection", collectionRequest);
+            return CallBGG<Collection.Return>("collection", collectionRequest);
         }
 
         /// <summary>

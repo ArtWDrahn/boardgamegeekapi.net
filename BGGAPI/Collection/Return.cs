@@ -1,11 +1,9 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="Object.cs" company="Tyson J. Hayes">
-//     Copyright (c), Tyson J. Hayes. All rights reserved.
+//     © 2014 - Refer to the License.md for the project.
 // </copyright>
 // <summary> Collection object for BGG API </summary>
-// <author> tyson@justhayes.me </author>
 //-----------------------------------------------------------------------
-
 
 namespace BGGAPI.Collection
 {
@@ -14,7 +12,7 @@ namespace BGGAPI.Collection
     /// <summary>
     /// The collection object.
     /// </summary>
-    public class Collection
+    public class Return
     {
         /// <summary>
         /// Gets or sets the total items.

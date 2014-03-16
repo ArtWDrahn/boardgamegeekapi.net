@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
-    <Compile Include="Collection\Collection.cs" />
+    <Compile Include="Collection\Return.cs" />
     <Compile Include="Collection\Request.cs" />
     <Compile Include="Collection\Item.cs" />
     <Compile Include="Family\Return.cs" />

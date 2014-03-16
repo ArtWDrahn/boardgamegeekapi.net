@@ -1,44 +1,38 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Collection.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   Defines the Collection type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace BGGAPI_UnitTests.Integration
 {
     using BGGAPI;
+    using BGGAPI.Collection;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// Integration for the Collection request.
+    /// <see cref="Request"/> for the request code.
+    /// <see cref="Return"/> for the returned object.
+    /// <see cref="Item"/> for the specific items returned.
+    /// </summary>
     [TestClass]
     public class Collection
     {
         /// <summary>
         /// Gets or sets the collection.
         /// </summary>
-        public static BGGAPI.Collection.Collection CollectionReturn { get; set; }
+        public static Return CollectionReturn { get; set; }
 
         /// <summary>
         /// Gets or sets the test context which provides
         /// information about and functionality for the current test run.
-        ///</summary>
+        /// </summary>
         public TestContext TestContext { get; set; }
-
-        #region Additional test attributes
-        //
-        // You can use the following additional attributes as you write your tests:
-        //
-        // Use ClassInitialize to run code before running the first test in the class
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup to run code after all tests in a class have run
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Use TestInitialize to run code before running each test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup to run code after each test has run
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
 
         /// <summary>
         /// The setup.
@@ -50,66 +44,96 @@ namespace BGGAPI_UnitTests.Integration
         public static void Setup(TestContext testContext)
         {
             var client = new Client();
-            var collectionRequest = new BGGAPI.Collection.Request { UserName = "tysonjhayes" };
+            var collectionRequest = new Request { UserName = "tysonjhayes" };
             CollectionReturn = client.GetCollection(collectionRequest);
         }
 
+        /// <summary>
+        /// The collection returns more then zero.
+        /// </summary>
         [TestMethod]
-        public void Collection_ReturnsMoreThenZero()
+        public void CollectionReturnsMoreThenZero()
         {
             Assert.IsTrue(CollectionReturn.TotalItems > 0);
         }
 
+        /// <summary>
+        /// The collection name is not null.
+        /// </summary>
         [TestMethod]
-        public void Collection_NameIsNotNull()
+        public void CollectionNameIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Name);
         }
 
+        /// <summary>
+        /// The collection year is not null.
+        /// </summary>
         [TestMethod]
-        public void Collection_YearIsNotNull()
+        public void CollectionYearIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].YearPublished);
         }
 
+        /// <summary>
+        /// The collection image is not null.
+        /// </summary>
         [TestMethod]
-        public void Collection_ImageIsNotNull()
+        public void CollectionImageIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Image);
         }
 
+        /// <summary>
+        /// The collection thumbnail is not null.
+        /// </summary>
         [TestMethod]
-        public void Collection_ThumbnailIsNotNull()
+        public void CollectionThumbnailIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Thumbnail);
         }
 
+        /// <summary>
+        /// The collection number of plays is not null.
+        /// </summary>
         [TestMethod]
-        public void Collection_NumPlaysIsNotNull()
+        public void CollectionNumPlaysIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].NumPlays);
         }
 
+        /// <summary>
+        /// The collection status is not null.
+        /// </summary>
         [TestMethod]
-        public void Collection_StatusIsNotNull()
+        public void CollectionStatusIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Status);
         }
 
+        /// <summary>
+        /// The collection status own is not null.
+        /// </summary>
         [TestMethod]
-        public void Collection_Status_OwnIsNotNull()
+        public void CollectionStatusOwnIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Status.Own);
         }
 
+        /// <summary>
+        /// The collection status previously owned is not null.
+        /// </summary>
         [TestMethod]
-        public void Collection_Status_PrevOwnedIsNotNull()
+        public void CollectionStatusPrevOwnedIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Status.PreviouslyOwned);
         }
 
+        /// <summary>
+        /// The collection status for trade is not null.
+        /// </summary>
         [TestMethod]
-        public void Collection_Status_ForTradeIsNotNull()
+        public void CollectionStatusForTradeIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Status.ForTrade);
         }
