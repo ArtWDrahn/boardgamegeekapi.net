@@ -1,18 +1,5 @@
 ﻿namespace BGGAPI.Thing
 {
-    using System.Collections.Generic;
-
-    /// <summary>
-    /// The object that is returned when a request is made for a thing.
-    /// </summary>
-    public class Return : Shared.Return
-    {
-        /// <summary>
-        /// Gets or sets the items.
-        /// </summary>
-        public List<Item> Items { get; set; }
-    }
-
     /// <summary>
     /// The links for the thing.
     /// </summary>
