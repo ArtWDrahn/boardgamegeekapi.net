@@ -66,49 +66,6 @@
             Assert.IsNotNull(Return.Items[ReturnID].Type);
         }
 
-        #region Name Tests
-        /// <summary>
-        /// The integration thing item names not null.
-        /// </summary>
-        [TestMethod]
-        public void IntegrationThingItemNamesNotNull()
-        {
-            Assert.IsNotNull(Return.Items[ReturnID].Names);
-        }
-
-        /// <summary>
-        /// The integration thing item names type not null.
-        /// </summary>
-        [TestMethod]
-        public void IntegrationThingItemNamesTypeContainKnownValue()
-        {
-            var names = Return.Items[ReturnID].Names.Select(name => name.Type).ToList();
-
-            CollectionAssert.Contains(names, names.Count > 1 ? "alternate" : "primary");
-        }
-
-        /// <summary>
-        /// The integration thing item names sort index not null.
-        /// </summary>
-        [TestMethod]
-        public void IntegrationThingItemNamesSortIndexNotNull()
-        {
-            var indexList = Return.Items[ReturnID].Names.Select(name => name.SortIndex).ToList();
-            CollectionAssert.AllItemsAreNotNull(indexList);
-        }
-
-        /// <summary>
-        /// The integration thing item names value not null.
-        /// </summary>
-        [TestMethod]
-        public void IntegrationThingItemNamesValueNotNull()
-        {
-            var nameValue = Return.Items[ReturnID].Names.Select(name => name.value).ToList();
-            CollectionAssert.AllItemsAreNotNull(nameValue);
-        }
-
-        #endregion
-
         /// <summary>
         /// The integration thing item description not null.
         /// </summary>
@@ -180,5 +137,53 @@
         {
             Assert.IsNotNull(Return.Items[ReturnID].MinAge);
         }
+
+        #region Name Tests
+        /// <summary>
+        /// The integration thing item names not null.
+        /// </summary>
+        [TestMethod]
+        public void IntegrationThingItemNamesNotNull()
+        {
+            Assert.IsNotNull(Return.Items[ReturnID].Names);
+        }
+
+        /// <summary>
+        /// The integration thing item names type not null.
+        /// </summary>
+        [TestMethod]
+        public void IntegrationThingItemNamesTypeContainKnownValue()
+        {
+            var names = Return.Items[ReturnID].Names.Select(name => name.Type).ToList();
+
+            CollectionAssert.Contains(names, names.Count > 1 ? "alternate" : "primary");
+        }
+
+        /// <summary>
+        /// The integration thing item names sort index not null.
+        /// </summary>
+        [TestMethod]
+        public void IntegrationThingItemNamesSortIndexNotNull()
+        {
+            var indexList = Return.Items[ReturnID].Names.Select(name => name.SortIndex).ToList();
+            CollectionAssert.AllItemsAreNotNull(indexList);
+        }
+
+        /// <summary>
+        /// The integration thing item names value not null.
+        /// </summary>
+        [TestMethod]
+        public void IntegrationThingItemNamesValueNotNull()
+        {
+            var nameValue = Return.Items[ReturnID].Names.Select(name => name.value).ToList();
+            CollectionAssert.AllItemsAreNotNull(nameValue);
+        }
+
+        #endregion
+
+        #region Polls
+        [TestMethod]
+        public void Integratin
+        #endregion
     }
 }
