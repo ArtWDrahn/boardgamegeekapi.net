@@ -1,18 +1,24 @@
-﻿namespace BGGAPI_UnitTests.Integration
+namespace BGGAPI_UnitTests.Integration.Thing
 {
     using System.Collections.Generic;
     using System.Linq;
 
     using BGGAPI;
+    using BGGAPI.Collection;
     using BGGAPI.Thing.Polls;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
-    /// Integration testing for Board Game Things.
+    /// Integration testing for Thing Request type.
+    /// This assumes that the request thing type is Board Game.
+    /// <see cref="Request"/> for Request object
+    /// <see cref="Return"/> for high level return object.
+    /// <see cref="Item"/> for the individual item being returned.
+    /// <see cref="Poll"/> for the poll data being returned.
     /// </summary>
     [TestClass]
-    public class ThingBoardGame
+    public class BoardGame
     {
         /// <summary>
         /// The game id.

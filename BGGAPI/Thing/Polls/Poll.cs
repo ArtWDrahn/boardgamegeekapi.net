@@ -1,9 +1,23 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Poll.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The polls that have been returned with the thing request.
+//   <see cref="Request" /> for the Request object.
+//   <see cref="Item" /> for the item object this should be linked to.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace BGGAPI.Thing.Polls
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// The polls that have been returned.
+    /// The polls that have been returned with the thing request.
+    /// <see cref="Request"/> for the Request object.
+    /// <see cref="Item"/> for the item object this should be linked to.
+    /// <see cref="Results"/> for the results of the poll.
     /// </summary>
     public class Poll
     {

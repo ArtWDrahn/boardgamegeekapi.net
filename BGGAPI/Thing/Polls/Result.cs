@@ -1,4 +1,15 @@
-﻿namespace BGGAPI.Thing.Polls
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Result.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The result of an individual poll.
+//   <see cref="Poll" /> for the highest poll object.
+//   <see cref="Results" /> for the list of Results.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI.Thing.Polls
 {
     using System.Diagnostics.CodeAnalysis;
 

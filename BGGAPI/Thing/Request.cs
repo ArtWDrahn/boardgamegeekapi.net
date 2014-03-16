@@ -1,10 +1,19 @@
-﻿namespace BGGAPI.Thing
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Request.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The request object for a Thing Request.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI.Thing
 {
     using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
-    /// The request parameters for a thing.
+    /// The request object for a Thing Request.
     /// </summary>
     public class Request
     {

@@ -1,9 +1,22 @@
-﻿namespace BGGAPI.Thing.Polls
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Results.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The results of the poll.
+//   <see cref="Poll" /> for the parent object of the results.
+//   <see cref="Result" /> for the individual results of the poll.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI.Thing.Polls
 {
     using System.Collections.Generic;
 
     /// <summary>
     /// The results of the poll.
+    /// <see cref="Poll"/> for the parent object of the results.
+    /// <see cref="Result"/> for the individual results of the poll.
     /// </summary>
     public class Results
     {
