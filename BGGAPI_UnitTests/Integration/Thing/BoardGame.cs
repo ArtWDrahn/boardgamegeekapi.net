@@ -282,5 +282,47 @@ namespace BGGAPI_UnitTests.Integration.Thing
             CollectionAssert.AllItemsAreNotNull(dependenceLevel);
         }
         #endregion
+
+        #region Links
+
+        /// <summary>
+        /// The thing item links count greater then zero.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemLinksCountGreaterThenZero()
+        {
+            Assert.IsTrue(Return.Items[ReturnID].Links.Any());
+        }
+
+        /// <summary>
+        /// The thing item links type not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemLinksTypeNotNull()
+        {
+            var linkType = Return.Items[ReturnID].Links.Select(item => item.Type).ToList();
+            CollectionAssert.AllItemsAreNotNull(linkType);
+        }
+
+        /// <summary>
+        /// The thing item links id not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemLinksIDNotNull()
+        {
+            var linkID = Return.Items[ReturnID].Links.Select(item => item.ID).ToList();
+            CollectionAssert.AllItemsAreNotNull(linkID);
+        }
+
+        /// <summary>
+        /// The thing item links value not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemLinksValueNotNull()
+        {
+            var linkValue = Return.Items[ReturnID].Links.Select(item => item.value).ToList();
+            CollectionAssert.AllItemsAreNotNull(linkValue);
+        }
+        #endregion
     }
 }

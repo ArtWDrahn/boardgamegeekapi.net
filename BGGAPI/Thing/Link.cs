@@ -1,7 +1,18 @@
-﻿namespace BGGAPI.Thing
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Link.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The links for the thing.
+//   <see cref="Item" /> for the parent object of this class.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI.Thing
 {
     /// <summary>
     /// The links for the thing.
+    /// <see cref="Item"/> for the parent object of this class.
     /// </summary>
     public class Link
     {
