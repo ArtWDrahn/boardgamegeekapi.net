@@ -57,6 +57,10 @@
     <Compile Include="Forums\ForumList\Forum.cs" />
     <Compile Include="Forums\ForumList\Request.cs" />
     <Compile Include="Forums\ForumList\Return.cs" />
+    <Compile Include="Thing\Item.cs" />
+    <Compile Include="Thing\Polls\Poll.cs" />
+    <Compile Include="Thing\Polls\Result.cs" />
+    <Compile Include="Thing\Polls\Results.cs" />
     <Compile Include="Url.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

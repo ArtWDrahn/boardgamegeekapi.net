@@ -4,6 +4,7 @@
     using System.Linq;
 
     using BGGAPI;
+    using BGGAPI.Thing.Polls;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -46,6 +47,7 @@
             Return = client.GetThings(thingsRequest);
         }
 
+        #region static
         /// <summary>
         /// The integration thing returned ids match.
         /// Given we can accept multiple ids we need to make sure they are all being returned.
@@ -138,6 +140,8 @@
             Assert.IsNotNull(Return.Items[ReturnID].MinAge);
         }
 
+        #endregion
+
         #region Name Tests
         /// <summary>
         /// The integration thing item names not null.
@@ -182,8 +186,95 @@
         #endregion
 
         #region Polls
+
+        /// <summary>
+        /// The thing item poll not null.
+        /// </summary>
         [TestMethod]
-        public void Integratin
+        public void ThingItemPollsNotNull()
+        {
+            Assert.IsNotNull(Return.Items[ReturnID].Polls);
+        }
+
+        /// <summary>
+        /// The thing item polls names are not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemPollsNameNotNull()
+        {
+            var pollNames = Return.Items[ReturnID].Polls.Select(poll => poll.Name).ToList();
+            CollectionAssert.AllItemsAreNotNull(pollNames);
+        }
+
+        /// <summary>
+        /// The thing item polls titles are not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemPollsTitleNotNull()
+        {
+            var pollTitle = Return.Items[ReturnID].Polls.Select(poll => poll.Title).ToList();
+            CollectionAssert.AllItemsAreNotNull(pollTitle);
+        }
+
+        /// <summary>
+        /// The thing item polls total votes are not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemPollsTotalVotesNotNull()
+        {
+            var pollVotes = Return.Items[ReturnID].Polls.Select(poll => poll.TotalVotes).ToList();
+            CollectionAssert.AllItemsAreNotNull(pollVotes);
+        }
+
+        /// <summary>
+        /// The thing item polls results not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemPollsResultsNotNull()
+        {
+            var pollResults = Return.Items[ReturnID].Polls.Select(poll => poll.ResultsList).ToList();
+            CollectionAssert.AllItemsAreNotNull(pollResults);
+        }
+
+        /// <summary>
+        /// The thing item polls results values are not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemPollsResultsValuesAreNotNull()
+        {
+            var finalResultsValue = (from poll in Return.Items[ReturnID].Polls from result in poll.ResultsList from item in result.ResultList select item.value).ToList();
+            CollectionAssert.AllItemsAreNotNull(finalResultsValue);
+        }
+
+        /// <summary>
+        /// The thing item polls results numbers are not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemPollsResultsNumAreNotNull()
+        {
+            var finalResultsVotes = (from poll in Return.Items[ReturnID].Polls from result in poll.ResultsList from item in result.ResultList select item.NumVotes).ToList();
+            CollectionAssert.AllItemsAreNotNull(finalResultsVotes);
+        }
+
+        /// <summary>
+        /// The thing item polls results number of players is not null on number of players poll.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemPollsResultsNumPlayersNotNullOnNumPlayersPoll()
+        {
+            var numPlayers = (from poll in Return.Items[ReturnID].Polls where poll.Name == "suggested_numplayers" from result in poll.ResultsList select result.NumPlayers).Cast<object>().ToList();
+            Assert.IsTrue(numPlayers.Count > 0);
+        }
+
+        /// <summary>
+        /// The thing item polls results level are not null on language dependence poll.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemPollsResultsLevelNotNullOnLanguageDependencePoll()
+        {
+            var dependenceLevel = (from poll in Return.Items[ReturnID].Polls where poll.Name == "language_dependence" from result in poll.ResultsList from item in result.ResultList select item.value).ToList();
+            CollectionAssert.AllItemsAreNotNull(dependenceLevel);
+        }
         #endregion
     }
 }
