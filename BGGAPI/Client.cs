@@ -75,7 +75,7 @@ namespace BGGAPI
         }
 
         /// <summary>
-        /// Requests information about specific BGG objects
+        /// Requests information about specific users in Board Game Geek
         /// </summary>
         /// <param name="userRequest">
         /// The user Request.
@@ -93,6 +93,18 @@ namespace BGGAPI
             return CallBGG<Users.UserReturn>("user", userRequest);
         }
 
+        /// <summary>
+        /// Get the family of board games requested.
+        /// </summary>
+        /// <param name="familyRequest">
+        /// The family request.
+        /// </param>
+        /// <returns>
+        /// The Family <see cref="Return"/> Object.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        /// If no id is presented it returns an ArgumentException.
+        /// </exception>
         public Family.Return GetFamily(Family.Request familyRequest)
         {
             if (familyRequest.ID == null)
@@ -101,6 +113,16 @@ namespace BGGAPI
             }
 
             return CallBGG<Family.Return>("family", familyRequest);
+        }
+
+        public ForumList.Return GetFourmList(FourmList.Request fourmRequest)
+        {
+            if (fourmRequest.ID == 0)
+            {
+                throw new ArgumentException("Zero ID in fourmRequest");
+            }
+
+            return CallBGG<ForumList.Return>("forumlist", fourmRequest);
         }
 
         /// <summary>

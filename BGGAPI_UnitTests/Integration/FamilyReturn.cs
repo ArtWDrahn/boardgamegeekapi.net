@@ -7,7 +7,6 @@
 
     using BGGAPI;
     using BGGAPI.Family;
-    using BGGAPI.Shared;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

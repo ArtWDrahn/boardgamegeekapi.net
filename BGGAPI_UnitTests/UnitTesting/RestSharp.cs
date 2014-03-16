@@ -20,7 +20,7 @@ namespace BGGAPI_UnitTests.UnitTesting
     /// Summary description for RestSharp
     /// </summary>
     [TestClass]
-    public class RestSharp
+    public class RestSharp : Client
     {
         public RestSharp()
         {
@@ -80,6 +80,13 @@ namespace BGGAPI_UnitTests.UnitTesting
         [TestMethod]
         public void Collection_UnitTest()
         {
+            var collectionRequest = new BGGAPI.Collection.Request
+                                        {
+                                            UserName = "tysonjhayes",
+                                            Rated = true,
+                                            Stats = true
+                                        };
+
             // Read in the XML Data
             string testData = XDocument.Load(Path.GetFullPath(@"D:\GitHub\BGGAPI\BGGAPI_UnitTests\Files\Collection_User.xml")).ToString();
 
@@ -93,8 +100,12 @@ namespace BGGAPI_UnitTests.UnitTesting
             });
 
             var request = new RestRequest();
-            var response = mock.Object.Execute<BGGAPI.Collection.Collection>(request);
-            Assert.IsTrue(response.Data.TotalItems > 0);
+            var derp = new Mock<Client>();
+            //derp.Setup(x => x.CallBGG<BGGAPI.Collection.Collection>("collection", request)).Returns();
+
+            // var response = mock.Object.Execute<BGGAPI.Collection.Collection>(request);
+            var response = derp.Object.GetCollection(collectionRequest);
+            Assert.IsTrue(response.TotalItems > 0);
         }
 
     }

@@ -54,6 +54,9 @@
     <Compile Include="Family\Return.cs" />
     <Compile Include="Family\Item.cs" />
     <Compile Include="Family\Request.cs" />
+    <Compile Include="Forums\ForumList\Forum.cs" />
+    <Compile Include="Forums\ForumList\Request.cs" />
+    <Compile Include="Forums\ForumList\Return.cs" />
     <Compile Include="Url.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

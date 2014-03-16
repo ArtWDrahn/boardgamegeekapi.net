@@ -1,5 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="UserRequest.cs" company="Tyson J. Hayes" />
+//  © 2014 - Refer to the License.md for the project.
 // <summary>
 //   Does integration tests the BGGAPI.Users.Request by calling out to BGG and parsing over live data.
 //   The user that was selected was done so randomly as they actually had most of the fields to parse over.
@@ -14,6 +15,10 @@ namespace BGGAPI_UnitTests.Integration
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// Does integration tests the BGGAPI.Users.Request by calling out to BGG and parsing over live data.
+    /// The user that was selected was done so randomly as they actually had most of the fields to parse over.
+    /// </summary>
     [TestClass]
     public class UserRequest
     {
@@ -81,8 +86,11 @@ namespace BGGAPI_UnitTests.Integration
             Assert.IsNotNull(UserReturn.Name);
         }
 
+        /// <summary>
+        /// The user returned first name is not null.
+        /// </summary>
         [TestMethod]
-        public void User_ReturnedFirstName_IsNotNull()
+        public void UserReturnedFirstNameIsNotNull()
         {
             Assert.IsTrue(!string.IsNullOrWhiteSpace(UserReturn.FirstName.value));
         }

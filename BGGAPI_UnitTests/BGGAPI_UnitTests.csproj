@@ -62,6 +62,7 @@
     <Compile Include="Integration\Collection.cs" />
     <Compile Include="Integration\ThingBoardGame.cs" />
     <Compile Include="Integration\FamilyReturn.cs" />
+    <Compile Include="Integration\ForumList.cs" />
     <Compile Include="Integration\UserRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Shared.cs" />
