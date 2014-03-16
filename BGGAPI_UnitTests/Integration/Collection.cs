@@ -1,4 +1,4 @@
-﻿namespace BGGAPI_UnitTests.UnitTesting
+namespace BGGAPI_UnitTests.Integration
 {
     using BGGAPI;
 
