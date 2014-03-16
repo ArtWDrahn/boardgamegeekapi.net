@@ -5,7 +5,7 @@
 // <summary>
 //   Establishes the Client class for interacting with Board Game Geek.
 //   This is just a start and currently all methods for interacting with the objects are stored here.
-//   A refactoring of this is likely in order as the
+//   A refactoring of this is likely in order as the CallBGG method is not exposed to be easily testable.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
