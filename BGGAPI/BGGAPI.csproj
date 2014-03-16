@@ -59,6 +59,7 @@
     <Compile Include="Forums\ForumList\Return.cs" />
     <Compile Include="Thing\Item.cs" />
     <Compile Include="Thing\Link.cs" />
+    <Compile Include="Thing\MarketPlaceListing\Listing.cs" />
     <Compile Include="Thing\Polls\Poll.cs" />
     <Compile Include="Thing\Polls\Result.cs" />
     <Compile Include="Thing\Polls\Results.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Thing\Historical\Historical.cs" />
     <Compile Include="Thing\Request.cs" />
     <Compile Include="Thing\Return.cs" />
-    <Compile Include="Thing\Optional.cs" />
     <Compile Include="Users\Request.cs" />
     <Compile Include="Users\UserReturn.cs" />
   </ItemGroup>

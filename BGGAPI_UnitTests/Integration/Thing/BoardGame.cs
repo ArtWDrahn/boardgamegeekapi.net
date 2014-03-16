@@ -50,7 +50,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
         public static void Setup(TestContext testContext)
         {
             var client = new Client();
-            var thingsRequest = new BGGAPI.Thing.Request { ID = GameID, Videos = true };
+            var thingsRequest = new BGGAPI.Thing.Request { ID = GameID, Videos = true, Marketplace = true};
             ReturnID = Shared.Shared.Integer(GameID.Count);
             Return = client.GetThings(thingsRequest);
         }
@@ -412,7 +412,73 @@ namespace BGGAPI_UnitTests.Integration.Thing
         #endregion
 
         // TODO: Statistics
-        // TODO: MarketplaceListings
+
+        #region Marketplace
+
+        /// <summary>
+        /// The thing item market place listing return list date.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemMarketPlaceListingReturnListDate()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].MarketplaceListing.Select(listing => listing.ListDate.value).ToList());
+        }
+
+        /// <summary>
+        /// The thing item market place listing price value not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemMarketPlaceListingPriceValueNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].MarketplaceListing.Select(listing => listing.Price.value).ToList());
+        }
+
+        /// <summary>
+        /// The thing item market place listing price currency not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemMarketPlaceListingPriceCurrencyNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].MarketplaceListing.Select(listing => listing.Price.Currency).ToList());
+        }
+
+        /// <summary>
+        /// The thing item market place listing condition value not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemMarketPlaceListingConditionValueNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].MarketplaceListing.Select(listing => listing.Condition.value).ToList());
+        }
+
+        /// <summary>
+        /// The thing item market place listing notes value not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemMarketPlaceListingNotesValueNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].MarketplaceListing.Select(listing => listing.Notes.value).ToList());
+        }
+
+        /// <summary>
+        /// The thing item market place listing link href not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemMarketPlaceListingLinkHrefNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].MarketplaceListing.Select(listing => listing.Link.HRef).ToList());
+        }
+
+        /// <summary>
+        /// The thing item market place listing link title not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemMarketPlaceListingLinkTitleNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].MarketplaceListing.Select(listing => listing.Link.Title).ToList());
+        }
+        #endregion
+
         // TODO: Comments
         // TODO: RatingsComments
         // TODO: Historical

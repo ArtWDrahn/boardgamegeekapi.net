@@ -14,6 +14,7 @@ namespace BGGAPI.Thing
     using System.Collections.Generic;
 
     using BGGAPI.Shared;
+    using BGGAPI.Thing.MarketPlaceListing;
     using BGGAPI.Thing.Polls;
     using BGGAPI.Thing.Videos;
 
@@ -144,6 +145,6 @@ namespace BGGAPI.Thing
         /// <summary>
         /// Gets or sets the marketplace listings.
         /// </summary>
-        public MarketplaceListings MarketplaceListings { get; set; }
+        public List<Listing> MarketplaceListing { get; set; }
     }
 }

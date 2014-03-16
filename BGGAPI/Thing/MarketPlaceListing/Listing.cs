@@ -1,24 +1,7 @@
-﻿namespace BGGAPI.Thing
+namespace BGGAPI.Thing.MarketPlaceListing
 {
-    using System;
-    using System.Collections.Generic;
-
     using BGGAPI.Shared;
 
-    /// <summary>
-    /// The marketplace listings.
-    /// </summary>
-    public class MarketplaceListings
-    {
-        /// <summary>
-        /// Gets or sets the listings.
-        /// </summary>
-        public List<Listing> Listings { get; set; }
-    }
-
-    /// <summary>
-    /// The listing.
-    /// </summary>
     public class Listing
     {
         /// <summary>
