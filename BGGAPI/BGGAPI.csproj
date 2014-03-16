@@ -62,6 +62,8 @@
     <Compile Include="Thing\Polls\Poll.cs" />
     <Compile Include="Thing\Polls\Result.cs" />
     <Compile Include="Thing\Polls\Results.cs" />
+    <Compile Include="Thing\Statistics.cs" />
+    <Compile Include="Thing\Videos\Video.cs" />
     <Compile Include="Url.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

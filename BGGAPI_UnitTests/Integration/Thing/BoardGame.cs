@@ -6,6 +6,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
     using BGGAPI;
     using BGGAPI.Collection;
     using BGGAPI.Thing.Polls;
+    using BGGAPI.Thing.Videos;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,6 +17,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
     /// <see cref="Return"/> for high level return object.
     /// <see cref="Item"/> for the individual item being returned.
     /// <see cref="Poll"/> for the poll data being returned.
+    /// <see cref="Video"/> for video data being returned.
     /// </summary>
     [TestClass]
     public class BoardGame
@@ -48,7 +50,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
         public static void Setup(TestContext testContext)
         {
             var client = new Client();
-            var thingsRequest = new BGGAPI.Thing.Request { ID = GameID };
+            var thingsRequest = new BGGAPI.Thing.Request { ID = GameID, Videos = true };
             ReturnID = Shared.Shared.Integer(GameID.Count);
             Return = client.GetThings(thingsRequest);
         }
@@ -325,7 +327,90 @@ namespace BGGAPI_UnitTests.Integration.Thing
         }
         #endregion
 
-        // TODO: Videos
+        #region Videos
+
+        /// <summary>
+        /// The thing item video count greater than zero.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemVideoCountGreaterThanZero()
+        {
+            Assert.IsTrue(Return.Items[ReturnID].Videos.Count > 0);
+        }
+
+        /// <summary>
+        /// The thing item video id not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemVideoIDNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].Videos.Select(video => video.ID).ToList());
+        }
+
+        /// <summary>
+        /// The thing item video titles not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemVideoTitlesNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].Videos.Select(video => video.Title).ToList());
+        }
+
+        /// <summary>
+        /// The thing item video category not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemVideoCategoryNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].Videos.Select(video => video.Category).ToList());
+        }
+
+        /// <summary>
+        /// The thing item video language not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemVideoLanguageNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].Videos.Select(video => video.Language).ToList());
+        }
+
+        /// <summary>
+        /// The thing item video link not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemVideoLinkNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].Videos.Select(video => video.Link).ToList());
+        }
+
+        /// <summary>
+        /// The thing item video user name not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemVideoUserNameNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].Videos.Select(video => video.UserName).ToList());
+        }
+
+        /// <summary>
+        /// The thing item video user id not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemVideoUserIDNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].Videos.Select(video => video.UserId).ToList());
+        }
+
+        /// <summary>
+        /// The thing item video post date not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemVideoPostDateNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].Videos.Select(video => video.PostDate).ToList());
+        }
+        #endregion
+
         // TODO: Statistics
         // TODO: MarketplaceListings
         // TODO: Comments

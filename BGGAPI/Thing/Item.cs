@@ -15,6 +15,7 @@ namespace BGGAPI.Thing
 
     using BGGAPI.Shared;
     using BGGAPI.Thing.Polls;
+    using BGGAPI.Thing.Videos;
 
     /// <summary>
     /// The object describing the thing being returned.
@@ -133,7 +134,7 @@ namespace BGGAPI.Thing
         /// <summary>
         /// Gets or sets the videos.
         /// </summary>
-        public VideosList Videos { get; set; }
+        public List<Video> Videos { get; set; }
 
         /// <summary>
         /// Gets or sets the statistics.

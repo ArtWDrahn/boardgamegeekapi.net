@@ -57,11 +57,6 @@ namespace BGGAPI_UnitTests.Integration
         private static List<int> ReturnedItems { get; set; }
 
         /// <summary>
-        /// Gets or sets the name count.
-        /// </summary>
-        private static int NameCount { get; set; }
-
-        /// <summary>
         /// The setup of the Family Return Tests.
         /// </summary>
         /// <param name="testContext">
@@ -106,12 +101,7 @@ namespace BGGAPI_UnitTests.Integration
         [TestMethod]
         public void IntegrationFamilyReturnsNameNotNull()
         {
-            foreach (var name in Return.Items[0].Names.Where(name => !string.IsNullOrWhiteSpace(name.value)))
-            {
-                NameCount++;
-            }
-
-            Assert.AreEqual(NameCount, Return.Items[0].Names.Count);
+            CollectionAssert.AllItemsAreNotNull(Return.Items[0].Names.Select(name => name.value).ToList());
         }
 
         /// <summary>

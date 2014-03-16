@@ -1,4 +1,4 @@
-﻿namespace BGGAPI
+﻿namespace BGGAPI.Collection
 {
     using BGGAPI.Shared;
 
@@ -23,7 +23,7 @@
         public int PlayingTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the num owned.
+        /// Gets or sets the number owned.
         /// </summary>
         public int NumOwned { get; set; }
 
