@@ -1,4 +1,4 @@
-﻿namespace BGGAPI.FourmList
+﻿namespace BGGAPI.ForumList
 {
     public class Request
     {
