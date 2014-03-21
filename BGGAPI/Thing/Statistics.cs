@@ -7,7 +7,7 @@
     /// <summary>
     /// The statistics for the thing item.
     /// <see cref="Item"/> for parent object.
-    /// <see cref="Ratings"/> for information about the rating.
+    /// <see cref="Rating"/> for information about the rating.
     /// </summary>
     public class Statistics
     {
@@ -19,6 +19,6 @@
         /// <summary>
         /// Gets or sets the ratings.
         /// </summary>
-        public List<Ratings> Ratings { get; set; }
+        public List<Ratings> Rating { get; set; }
     }
 }
