@@ -57,6 +57,9 @@
     <Compile Include="Forums\ForumList\Forum.cs" />
     <Compile Include="Forums\ForumList\Request.cs" />
     <Compile Include="Forums\ForumList\Return.cs" />
+    <Compile Include="Forums\Forums\Request.cs" />
+    <Compile Include="Forums\Forums\Return.cs" />
+    <Compile Include="Forums\Forums\Thread.cs" />
     <Compile Include="Thing\Item.cs" />
     <Compile Include="Thing\Link.cs" />
     <Compile Include="Thing\MarketPlaceListing\Listing.cs" />

@@ -115,14 +115,48 @@ namespace BGGAPI
             return CallBGG<Family.Return>("family", familyRequest);
         }
 
-        public ForumList.Return GetFourmList(FourmList.Request fourmRequest)
+        /// <summary>
+        /// The get forum list.
+        /// </summary>
+        /// <param name="forumRequest">
+        /// The forum request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Return"/>.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        /// If no id is presented it returns an ArgumentException.
+        /// </exception>
+        public ForumList.Return GetFourmList(ForumList.Request forumRequest)
         {
-            if (fourmRequest.ID == 0)
+            if (forumRequest.ID == 0)
             {
-                throw new ArgumentException("Zero ID in fourmRequest");
+                throw new ArgumentException("Zero ID in forumRequest");
             }
 
-            return CallBGG<ForumList.Return>("forumlist", fourmRequest);
+            return CallBGG<ForumList.Return>("forumlist", forumRequest);
+        }
+
+        /// <summary>
+        /// The get forums.
+        /// </summary>
+        /// <param name="forumRequest">
+        /// The forum request.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Return"/>.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        /// If no id is presented it returns an ArgumentException.
+        /// </exception>
+        public Forums.Return GetFourms(Forums.Request forumRequest)
+        {
+            if (forumRequest.ID == 0)
+            {
+                throw new ArgumentException("Zero ID in forumRequest");
+            }
+
+            return CallBGG<Forums.Return>("forum", forumRequest);
         }
 
         /// <summary>
