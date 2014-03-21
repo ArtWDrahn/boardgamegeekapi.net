@@ -1,3 +1,19 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BoardGame.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   Integration testing for Thing Request type.
+//   This assumes that the request thing type is Board Game.
+//   <see cref="BGGAPI.Thing.Request" /> for Request object
+//   <see cref="Return" /> for high level return object.
+//   <see cref="BGGAPI.Thing.Item" /> for the individual item being returned.
+//   <see cref="Poll" /> for the poll data being returned.
+//   <see cref="Video" /> for video data being returned.
+//   <see cref="Statistics" /> for stats data being returned.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace BGGAPI_UnitTests.Integration.Thing
 {
     using System.Collections.Generic;
@@ -5,6 +21,8 @@ namespace BGGAPI_UnitTests.Integration.Thing
 
     using BGGAPI;
     using BGGAPI.Thing;
+    using BGGAPI.Thing.Polls;
+    using BGGAPI.Thing.Videos;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
