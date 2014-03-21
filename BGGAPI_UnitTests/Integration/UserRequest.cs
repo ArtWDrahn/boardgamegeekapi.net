@@ -1,6 +1,7 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="UserRequest.cs" company="Tyson J. Hayes" />
+// <copyright file="UserRequest.cs" company="Tyson J. Hayes" >
 //  © 2014 - Refer to the License.md for the project.
+// </copyright>
 // <summary>
 //   Does integration tests the BGGAPI.Users.Request by calling out to BGG and parsing over live data.
 //   The user that was selected was done so randomly as they actually had most of the fields to parse over.
