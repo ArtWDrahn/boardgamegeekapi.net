@@ -55,7 +55,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection returns more then zero.
         /// </summary>
         [TestMethod]
-        public void CollectionReturnsMoreThenZero()
+        public void IntegrationCollectionReturnsMoreThenZero()
         {
             Assert.IsTrue(CollectionReturn.TotalItems > 0);
         }
@@ -64,7 +64,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection name is not null.
         /// </summary>
         [TestMethod]
-        public void CollectionNameIsNotNull()
+        public void IntegrationCollectionNameIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Name);
         }
@@ -73,7 +73,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection year is not null.
         /// </summary>
         [TestMethod]
-        public void CollectionYearIsNotNull()
+        public void IntegrationCollectionYearIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].YearPublished);
         }
@@ -82,7 +82,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection image is not null.
         /// </summary>
         [TestMethod]
-        public void CollectionImageIsNotNull()
+        public void IntegrationCollectionImageIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Image);
         }
@@ -91,7 +91,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection thumbnail is not null.
         /// </summary>
         [TestMethod]
-        public void CollectionThumbnailIsNotNull()
+        public void IntegrationCollectionThumbnailIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Thumbnail);
         }
@@ -100,7 +100,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection number of plays is not null.
         /// </summary>
         [TestMethod]
-        public void CollectionNumPlaysIsNotNull()
+        public void IntegrationCollectionNumPlaysIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].NumPlays);
         }
@@ -109,7 +109,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection status is not null.
         /// </summary>
         [TestMethod]
-        public void CollectionStatusIsNotNull()
+        public void IntegrationCollectionStatusIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Status);
         }
@@ -118,7 +118,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection status own is not null.
         /// </summary>
         [TestMethod]
-        public void CollectionStatusOwnIsNotNull()
+        public void IntegrationCollectionStatusOwnIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Status.Own);
         }
@@ -127,7 +127,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection status previously owned is not null.
         /// </summary>
         [TestMethod]
-        public void CollectionStatusPrevOwnedIsNotNull()
+        public void IntegrationCollectionStatusPrevOwnedIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Status.PreviouslyOwned);
         }
@@ -136,7 +136,7 @@ namespace BGGAPI_UnitTests.Integration
         /// The collection status for trade is not null.
         /// </summary>
         [TestMethod]
-        public void CollectionStatusForTradeIsNotNull()
+        public void IntegrationCollectionStatusForTradeIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Status.ForTrade);
         }
