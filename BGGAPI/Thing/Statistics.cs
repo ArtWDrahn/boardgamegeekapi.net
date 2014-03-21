@@ -1,4 +1,15 @@
-﻿namespace BGGAPI.Thing
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Statistics.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The statistics for the thing item.
+//   <see cref="Item" /> for parent object.
+//   <see cref="Rating" /> for information about the rating.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI.Thing
 {
     using System.Collections.Generic;
 

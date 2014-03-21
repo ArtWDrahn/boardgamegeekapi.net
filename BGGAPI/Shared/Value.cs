@@ -16,7 +16,7 @@
     }
 
     /// <summary>
-    /// The int value.
+    /// The integer value.
     /// </summary>
     public class IntValue
     {

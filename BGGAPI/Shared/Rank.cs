@@ -1,7 +1,16 @@
-﻿namespace BGGAPI.Shared
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Rank.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The rank object.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI.Shared
 {
     /// <summary>
-    /// The rank.
+    /// The rank object.
     /// </summary>
     public class Rank
     {

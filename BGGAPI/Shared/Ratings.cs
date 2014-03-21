@@ -1,9 +1,21 @@
-﻿namespace BGGAPI.Shared
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Ratings.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The statistics for the thing item.
+//   <see cref="Shared"/> for the various FooValue types.
+//   <see cref="Rank"/> for information about the ranks.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI.Shared
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// The ratings.
+    /// <see cref="Shared"/> for the various FooValue types.
+    /// <see cref="Rank"/> for information about the ranks.
     /// </summary>
     public class Ratings
     {
