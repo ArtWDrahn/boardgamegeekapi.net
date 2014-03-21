@@ -15,8 +15,6 @@ namespace BGGAPI
     using System.Collections.Generic;
     using System.Linq;
 
-    using BGGAPI.Thing.Comments;
-
     using RestSharp;
 
     /// <summary>
@@ -100,7 +98,7 @@ namespace BGGAPI
         /// The family request.
         /// </param>
         /// <returns>
-        /// The Family <see cref="Return"/> Object.
+        /// The Family <see cref="BGGAPI.Family.Return"/> Object.
         /// </returns>
         /// <exception cref="ArgumentException">
         /// If no id is presented it returns an ArgumentException.
@@ -122,7 +120,7 @@ namespace BGGAPI
         /// The forum request.
         /// </param>
         /// <returns>
-        /// The <see cref="Return"/>.
+        /// The <see cref="ForumList.Return"/>.
         /// </returns>
         /// <exception cref="ArgumentException">
         /// If no id is presented it returns an ArgumentException.
@@ -144,7 +142,7 @@ namespace BGGAPI
         /// The forum request.
         /// </param>
         /// <returns>
-        /// The <see cref="Return"/>.
+        /// The <see cref="Forums.Return"/>.
         /// </returns>
         /// <exception cref="ArgumentException">
         /// If no id is presented it returns an ArgumentException.
@@ -164,21 +162,57 @@ namespace BGGAPI
         /// </summary>
         /// <param name="thingsRequest">Details of the request</param>
         /// <returns>Details on the requested objects</returns>
-        public Dictionary<int, List<Comment>> GetComments(Thing.Request thingsRequest)
+        public Dictionary<int, List<Thing.Comments.Comment>> GetComments(Thing.Comments.CommentRequest thingsRequest)
         {
             if (thingsRequest.ID == null || !thingsRequest.ID.Any())
             {
                 throw new ArgumentException("Null or empty list of IDs in thingsRequest");
             }
 
-            var returnRequest = CallBGG<Return>("thing", thingsRequest);
+            var returnRequest = CallBGG<Thing.Comments.Return>("thing", thingsRequest);
 
-            var comDictionary = new Dictionary<int, List<Comment>>();
+            var comDictionary = new Dictionary<int, List<Thing.Comments.Comment>>();
 
-            foreach (Item item in returnRequest.Items)
+            foreach (Thing.Comments.Item item in returnRequest.Items)
             {
-                var comments = item.Comments.CommentList.Select(comment =>
-                    new Comment
+                var comments = item.Comments.Select(comment =>
+                    new Thing.Comments.Comment
+                    {
+                        Rating = comment.Rating,
+                        UserName = comment.UserName,
+                        value = comment.value
+                    }).ToList();
+                comDictionary.Add(item.ID, comments);
+            }
+
+            return comDictionary;
+        }
+
+        /// <summary>
+        /// Requests information about specific BGG objects
+        /// </summary>
+        /// <param name="thingsRatingsRequest">Details of the request</param>
+        /// <returns>Details on the requested objects</returns>
+        public Dictionary<int, List<Thing.Comments.Comment>> GetRatingComments(Thing.Comments.RatingsRequest thingsRatingsRequest)
+        {
+            if (thingsRatingsRequest.ID == null || !thingsRatingsRequest.ID.Any())
+            {
+                throw new ArgumentException("Null or empty list of IDs in thingsRequest");
+            }
+
+            if (thingsRatingsRequest.ID == null || !thingsRatingsRequest.ID.Any())
+            {
+                throw new ArgumentException("Null or empty list of IDs in thingsRequest");
+            }
+
+            var returnRequest = CallBGG<Thing.Comments.Return>("thing", thingsRatingsRequest);
+
+            var comDictionary = new Dictionary<int, List<Thing.Comments.Comment>>();
+
+            foreach (Thing.Comments.Item item in returnRequest.Items)
+            {
+                var comments = item.Comments.Select(comment =>
+                    new Thing.Comments.Comment
                     {
                         Rating = comment.Rating,
                         UserName = comment.UserName,

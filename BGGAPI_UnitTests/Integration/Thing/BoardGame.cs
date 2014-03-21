@@ -664,7 +664,6 @@ namespace BGGAPI_UnitTests.Integration.Thing
         }
         #endregion
 
-        // TODO: Comments
         // TODO: RatingsComments
         // TODO: Historical
     }
