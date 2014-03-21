@@ -60,6 +60,8 @@
     <Compile Include="Forums\Forums\Request.cs" />
     <Compile Include="Forums\Forums\Return.cs" />
     <Compile Include="Forums\Forums\Thread.cs" />
+    <Compile Include="Hot\Request.cs" />
+    <Compile Include="Hot\Return.cs" />
     <Compile Include="Thing\Comments\Comment.cs" />
     <Compile Include="Thing\Comments\CommentRequest.cs" />
     <Compile Include="Thing\Comments\Item.cs" />
@@ -83,7 +85,6 @@
     <Compile Include="Shared\Value.cs" />
     <Compile Include="ThingRequests.cs" />
     <Compile Include="Thing\Comments\Return.cs" />
-    <Compile Include="Thing\Historical\Historical.cs" />
     <Compile Include="Thing\Request.cs" />
     <Compile Include="Thing\Return.cs" />
     <Compile Include="Users\Request.cs" />
@@ -93,7 +94,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forums\Threads\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

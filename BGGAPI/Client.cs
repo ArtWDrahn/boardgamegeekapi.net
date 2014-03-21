@@ -224,6 +224,11 @@ namespace BGGAPI
             return comDictionary;
         }
 
+        public Hot.Return GetHotList(Hot.Request hotRequest)
+        {
+            return CallBGG<Hot.Return>("hot", hotRequest);
+        }
+
 
         /// <summary>
         /// Call Board Game Geek.
