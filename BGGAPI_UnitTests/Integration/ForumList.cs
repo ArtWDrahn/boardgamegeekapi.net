@@ -16,7 +16,6 @@ namespace BGGAPI_UnitTests.Integration
 
     using BGGAPI;
     using BGGAPI.ForumList;
-    using BGGAPI.FourmList;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
