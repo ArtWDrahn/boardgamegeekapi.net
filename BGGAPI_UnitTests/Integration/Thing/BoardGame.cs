@@ -50,7 +50,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
         public static void Setup(TestContext testContext)
         {
             var client = new Client();
-            var thingsRequest = new BGGAPI.Thing.Request { ID = GameID, Videos = true, Marketplace = true};
+            var thingsRequest = new BGGAPI.Thing.Request { ID = GameID, Videos = true, Marketplace = true, Stats = true};
             ReturnID = Shared.Shared.Integer(GameID.Count);
             Return = client.GetThings(thingsRequest);
         }
@@ -411,8 +411,6 @@ namespace BGGAPI_UnitTests.Integration.Thing
         }
         #endregion
 
-        // TODO: Statistics
-
         #region Marketplace
 
         /// <summary>
@@ -476,6 +474,192 @@ namespace BGGAPI_UnitTests.Integration.Thing
         public void ThingItemMarketPlaceListingLinkTitleNotNull()
         {
             CollectionAssert.AllItemsAreNotNull(Return.Items[ReturnID].MarketplaceListing.Select(listing => listing.Link.Title).ToList());
+        }
+        #endregion
+
+        #region Statistics
+
+        /// <summary>
+        /// The thing item statistics ratings average not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsAverageNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Average.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings user rated not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsUserRatedNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.UsersRated.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings bayes average not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsBayesAverageNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.BayesAverage.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings standard deviation not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsStdDevNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.StdDev.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings median not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsMedianNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Median.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings owned not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsOwnedNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Owned.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings trading not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsTradingNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Trading.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings wanting not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsWantingNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Wanting.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings wishing not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsWishingNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Wishing.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings number of comments not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsNumCommentsNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.NumComments.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings number of weights not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsNumWeightsNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.NumWeights.value)).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings average weight not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsAvgWeightNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.AverageWeight.value)).ToList());
+        }
+        #endregion
+
+        #region StatisticsRatingsRanks
+
+        /// <summary>
+        /// The thing item statistics ratings ranks id not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsRanksIDNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Ranks.Select(rank => rank.Id))).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings ranks type not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsRanksTypeNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Ranks.Select(rank => rank.Type))).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings ranks name not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsRanksNameNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Ranks.Select(rank => rank.Name))).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings ranks friendly name not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsRanksFriendlyNameNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Ranks.Select(rank => rank.FriendlyName))).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings ranks value not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsRanksValueNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Ranks.Select(rank => rank.value))).ToList());
+        }
+
+        /// <summary>
+        /// The thing item statistics ratings ranks bayes average not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsRatingsRanksBayesAverageNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Ranks.Select(rank => rank.BayesAverage))).ToList());
         }
         #endregion
 
