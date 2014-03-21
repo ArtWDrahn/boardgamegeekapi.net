@@ -4,7 +4,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
     using System.Linq;
 
     using BGGAPI;
-    using BGGAPI.Collection;
+    using BGGAPI.Thing;
     using BGGAPI.Thing.Polls;
     using BGGAPI.Thing.Videos;
 
@@ -13,11 +13,12 @@ namespace BGGAPI_UnitTests.Integration.Thing
     /// <summary>
     /// Integration testing for Thing Request type.
     /// This assumes that the request thing type is Board Game.
-    /// <see cref="Request"/> for Request object
+    /// <see cref="BGGAPI.Thing.Request"/> for Request object
     /// <see cref="Return"/> for high level return object.
-    /// <see cref="Item"/> for the individual item being returned.
+    /// <see cref="BGGAPI.Thing.Item"/> for the individual item being returned.
     /// <see cref="Poll"/> for the poll data being returned.
     /// <see cref="Video"/> for video data being returned.
+    /// <see cref="Statistics"/> for video data being returned.
     /// </summary>
     [TestClass]
     public class BoardGame
@@ -30,7 +31,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
         /// <summary>
         /// Gets or sets the returned thing object.
         /// </summary>
-        private static BGGAPI.Thing.Return Return { get; set; }
+        private static Return Return { get; set; }
 
         /// <summary>
         /// Gets or sets the Return ID
@@ -50,7 +51,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
         public static void Setup(TestContext testContext)
         {
             var client = new Client();
-            var thingsRequest = new BGGAPI.Thing.Request { ID = GameID, Videos = true, Marketplace = true, Stats = true};
+            var thingsRequest = new Request { ID = GameID, Videos = true, Marketplace = true, Stats = true };
             ReturnID = Shared.Shared.Integer(GameID.Count);
             Return = client.GetThings(thingsRequest);
         }
