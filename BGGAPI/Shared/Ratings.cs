@@ -27,6 +27,8 @@ namespace BGGAPI.Shared
         /// </summary>
         public string value { get; set; }
 
+        public string Date { get; set; }
+
         /// <summary>
         /// Gets or sets the users rated.
         /// </summary>

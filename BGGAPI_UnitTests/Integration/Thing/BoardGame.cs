@@ -5,8 +5,6 @@ namespace BGGAPI_UnitTests.Integration.Thing
 
     using BGGAPI;
     using BGGAPI.Thing;
-    using BGGAPI.Thing.Polls;
-    using BGGAPI.Thing.Videos;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -18,7 +16,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
     /// <see cref="BGGAPI.Thing.Item"/> for the individual item being returned.
     /// <see cref="Poll"/> for the poll data being returned.
     /// <see cref="Video"/> for video data being returned.
-    /// <see cref="Statistics"/> for video data being returned.
+    /// <see cref="Statistics"/> for stats data being returned.
     /// </summary>
     [TestClass]
     public class BoardGame
@@ -51,7 +49,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
         public static void Setup(TestContext testContext)
         {
             var client = new Client();
-            var thingsRequest = new Request { ID = GameID, Videos = true, Marketplace = true, Stats = true };
+            var thingsRequest = new Request { ID = GameID, Videos = true, Marketplace = true, Stats = true, Historical = true };
             ReturnID = Shared.Shared.Integer(GameID.Count);
             Return = client.GetThings(thingsRequest);
         }
@@ -478,6 +476,7 @@ namespace BGGAPI_UnitTests.Integration.Thing
         }
         #endregion
 
+        // These tests are covering Stats and Historical as they are returned on the same fields.
         #region Statistics
 
         /// <summary>
@@ -599,6 +598,16 @@ namespace BGGAPI_UnitTests.Integration.Thing
             CollectionAssert.AllItemsAreNotNull(
                 Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.AverageWeight.value)).ToList());
         }
+
+        /// <summary>
+        /// The thing item statistics historical date not null.
+        /// </summary>
+        [TestMethod]
+        public void ThingItemStatisticsHistoricalDateNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(
+                Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Date)).ToList());
+        }
         #endregion
 
         #region StatisticsRatingsRanks
@@ -663,8 +672,5 @@ namespace BGGAPI_UnitTests.Integration.Thing
                 Return.Items.Select(item => item.Statistics.Rating.Select(ratings => ratings.Ranks.Select(rank => rank.BayesAverage))).ToList());
         }
         #endregion
-
-        // TODO: RatingsComments
-        // TODO: Historical
     }
 }

@@ -63,6 +63,7 @@
     <Compile Include="Thing\Comments\Comment.cs" />
     <Compile Include="Thing\Comments\CommentRequest.cs" />
     <Compile Include="Thing\Comments\Item.cs" />
+    <Compile Include="Thing\Comments\RatingsRequest.cs" />
     <Compile Include="Thing\Item.cs" />
     <Compile Include="Thing\Link.cs" />
     <Compile Include="Thing\MarketPlaceListing\Listing.cs" />
