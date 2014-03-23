@@ -15,10 +15,9 @@ namespace BGGAPI_UnitTests.Integration
     using System.Collections.Generic;
     using System.Linq;
 
-    using BGG.Annotations;
-
     using BGGAPI;
     using BGGAPI.Family;
+    using BGGAPI.Properties;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -101,7 +100,7 @@ namespace BGGAPI_UnitTests.Integration
         [TestMethod]
         public void IntegrationFamilyReturnsNameNotNull()
         {
-            CollectionAssert.AllItemsAreNotNull(Return.Items[0].Names.Select(name => name.value).ToList());
+            CollectionAssert.AllItemsAreNotNull(Return.Items.Select(names => names.Names.Select(name => name.value)).ToList());
         }
 
         /// <summary>
@@ -110,7 +109,7 @@ namespace BGGAPI_UnitTests.Integration
         [TestMethod]
         public void IntegrationFamilyReturnsThumbnailNotNull()
         {
-            Assert.IsNotNull(Return.Items[0].Thumbnail);
+            CollectionAssert.AllItemsAreNotNull(Return.Items.Select(item => item.Thumbnail).ToList());
         }
 
         /// <summary>
@@ -119,7 +118,7 @@ namespace BGGAPI_UnitTests.Integration
         [TestMethod]
         public void IntegrationFamilyReturnsImageNotNull()
         {
-            Assert.IsNotNull(Return.Items[0].Image);
+            CollectionAssert.AllItemsAreNotNull(Return.Items.Select(item => item.Image).ToList());
         }
 
         /// <summary>
@@ -128,7 +127,7 @@ namespace BGGAPI_UnitTests.Integration
         [TestMethod]
         public void IntegrationFamilyReturnsDescriptionIsNotNull()
         {
-            Assert.IsNotNull(Return.Items[0].Description);
+            CollectionAssert.AllItemsAreNotNull(Return.Items.Select(item => item.Description).ToList());
         }
 
         /// <summary>
