@@ -60,8 +60,13 @@
     <Compile Include="Forums\Forums\Request.cs" />
     <Compile Include="Forums\Forums\Return.cs" />
     <Compile Include="Forums\Forums\Thread.cs" />
+    <Compile Include="Guilds\Request.cs" />
+    <Compile Include="Guilds\Return.cs" />
+    <Compile Include="Hot\Item.cs" />
+    <Compile Include="Hot\Name.cs" />
     <Compile Include="Hot\Request.cs" />
     <Compile Include="Hot\Return.cs" />
+    <Compile Include="Hot\Thumbnail.cs" />
     <Compile Include="Thing\Comments\Comment.cs" />
     <Compile Include="Thing\Comments\CommentRequest.cs" />
     <Compile Include="Thing\Comments\Item.cs" />

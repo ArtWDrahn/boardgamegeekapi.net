@@ -15,6 +15,8 @@ namespace BGGAPI
     using System.Collections.Generic;
     using System.Linq;
 
+    using BGGAPI.Users;
+
     using RestSharp;
 
     /// <summary>
@@ -229,6 +231,34 @@ namespace BGGAPI
             return CallBGG<Hot.Return>("hot", hotRequest);
         }
 
+        public Guilds.Return GetGuild(Guilds.Request guildRequest)
+        {
+            if (guildRequest.ID == 0)
+            {
+                throw new ArgumentException("Guild does not exist.");
+            }
+
+            return CallBGG<Guilds.Return>("guild", guildRequest);
+        }
+
+        //public Guilds.Return GetGuild(Guilds.Request guildRequest, bool allMembers)
+        //{
+        //    if (guildRequest.ID == 0)
+        //    {
+        //        throw new ArgumentException("Guild does not exist.");
+        //    }
+
+        //    var guild = CallBGG<Guilds.Return>("guild", guildRequest);
+        //    var pages = Convert.ToInt32(GetMaxPages(guild.Members.Count, 25));
+
+        //    for (int i = 0; i < pages; i++)
+        //    {
+        //        var recurse = new Guilds.Request { ID = 6, Members = true, Page = i };
+        //        var members = this.GetGuild(recurse).Members.Member.ToList();
+        //    }
+        //    return;
+        //}
+
 
         /// <summary>
         /// Call Board Game Geek.
@@ -317,6 +347,12 @@ namespace BGGAPI
             }
 
             return parameters;
+        }
+
+        private static double GetMaxPages(int count, int divisor)
+        {
+            var math = count / (double)divisor;
+            return Math.Ceiling(math);
         }
     }
 }
