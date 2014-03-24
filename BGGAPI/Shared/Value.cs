@@ -5,7 +5,7 @@
     /// <summary>
     /// Used when the api returns an XML with a value.
     /// In order to pick this up we have to have a property called value.
-    /// Example: <name value = "Carcassone">
+    /// Example: <name value = "Carcassone" />
     /// </summary>
     public class StringValue
     {

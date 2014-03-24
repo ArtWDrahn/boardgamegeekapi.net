@@ -1,4 +1,14 @@
-﻿namespace BGGAPI.Guilds
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Request.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The request object for Board Game Geek Guilds.
+//   <see cref="Return" /> for returned object.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI.Guilds
 {
     public class Request
     {

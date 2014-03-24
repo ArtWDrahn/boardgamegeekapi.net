@@ -13,7 +13,7 @@ namespace BGGAPI.Thing
 {
     using System.Collections.Generic;
 
-    using BGGAPI.Shared;
+    using Shared;
 
     /// <summary>
     /// The statistics for the thing item.

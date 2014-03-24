@@ -1,7 +1,20 @@
-﻿namespace BGGAPI.Guilds
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Request.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   The return object for Board Game Geek Guilds.
+//   This is mostly names, addresses and members names.
+//   <see cref="Request" /> for request object.
+//   <see cref="Members" /> for the list of members.
+//   <see cref="Member"/> for the individual member objects.
+//   <see cref="Locaton" /> for the location information of the guild.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI.Guilds
 {
     using System;
-    using System.Collections.Generic;
 
     public class Return : Shared.Return
     {
@@ -22,28 +35,5 @@
         public Location Location { get; set; }
 
         public Members Members { get; set; }
-    }
-
-    public class Location
-    {
-        public string Addr1 { get; set; }
-        public string Addr2 { get; set; }
-        public string City { get; set; }
-        public string StateOrProvince { get; set; }
-        public int? PostalCode { get; set; }
-        public string Country { get; set; }
-    }
-
-    public class Members
-    {
-        public int Count { get; set; }
-        public int Page { get; set; }
-        public List<Member> List { get; set; } 
-    }
-
-    public class Member
-    {
-        public string Name { get; set; }
-        public string Date { get; set; }
     }
 }

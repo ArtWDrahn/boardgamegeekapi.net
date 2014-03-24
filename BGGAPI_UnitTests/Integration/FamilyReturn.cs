@@ -17,7 +17,6 @@ namespace BGGAPI_UnitTests.Integration
 
     using BGGAPI;
     using BGGAPI.Family;
-    using BGGAPI.Properties;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -36,7 +35,6 @@ namespace BGGAPI_UnitTests.Integration
         /// The request id to use.
         /// Setting this as a field so it can be referenced else where.
         /// </summary>
-        [NotNull]
         private static readonly List<int> RequestID = new List<int> { 2, 42 };
 
         /// <summary>
