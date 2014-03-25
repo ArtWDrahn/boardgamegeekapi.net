@@ -156,6 +156,11 @@ namespace BGGAPI
             return CallBGG<Forums.Return>("forum", forumRequest);
         }
 
+        public Threads.Return GetThreads(Threads.Request threadRequest)
+        {
+            return CallBGG<Threads.Return>("threads", threadRequest);
+        }
+
         /// <summary>
         /// Requests information about specific BGG objects
         /// </summary>

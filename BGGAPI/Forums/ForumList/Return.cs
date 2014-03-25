@@ -5,7 +5,7 @@
     /// <summary>
     /// The returned object of the ForumList call.
     /// </summary>
-    public class Return : Shared.Return
+    public class Return : Shared.IReturn
     {
         /// <summary>
         /// Gets or sets the id of the returned forum list.
@@ -21,5 +21,8 @@
         /// Gets or sets the specific forums returned in the list.
         /// </summary>
         public List<Forum> Forums { get; set; }
+
+        public int TotalItems { get; set; }
+        public string TermsOfUse { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace BGGAPI.Guilds
 {
     using System;
 
-    public class Return : Shared.Return
+    public class Return : Shared.IReturn
     {
         public int ID { get; set; }
 
@@ -35,5 +35,7 @@ namespace BGGAPI.Guilds
         public Location Location { get; set; }
 
         public Members Members { get; set; }
+        public int TotalItems { get; set; }
+        public string TermsOfUse { get; set; }
     }
 }

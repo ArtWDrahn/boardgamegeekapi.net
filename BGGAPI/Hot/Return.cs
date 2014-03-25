@@ -11,8 +11,10 @@ namespace BGGAPI.Hot
 {
     using System.Collections.Generic;
 
-    public class Return : Shared.Return
+    public class Return : Shared.IReturn
     {
         public List<Item> Items { get; set; }
+        public int TotalItems { get; set; }
+        public string TermsOfUse { get; set; }
     }
 }

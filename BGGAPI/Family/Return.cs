@@ -16,11 +16,14 @@ namespace BGGAPI.Family
     /// <summary>
     /// The returned Family Object list.
     /// </summary>
-    public class Return : Shared.Return
+    public class Return : Shared.IReturn
     {
         /// <summary>
         /// Gets or sets the items that are returned.
         /// </summary>
-        public List<Item> Items { get; set; } 
+        public List<Item> Items { get; set; }
+
+        public int TotalItems { get; set; }
+        public string TermsOfUse { get; set; }
     }
 }

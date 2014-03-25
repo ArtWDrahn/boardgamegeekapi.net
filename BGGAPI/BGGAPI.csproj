@@ -60,6 +60,11 @@
     <Compile Include="Forums\Forums\Request.cs" />
     <Compile Include="Forums\Forums\Return.cs" />
     <Compile Include="Forums\Forums\Thread.cs" />
+    <Compile Include="Forums\Threads\Request.cs" />
+    <Compile Include="Forums\Threads\Return.cs" />
+    <Compile Include="Guilds\Location.cs" />
+    <Compile Include="Guilds\Member.cs" />
+    <Compile Include="Guilds\Members.cs" />
     <Compile Include="Guilds\Request.cs" />
     <Compile Include="Guilds\Return.cs" />
     <Compile Include="Hot\Item.cs" />
@@ -99,9 +104,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forums\Threads\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

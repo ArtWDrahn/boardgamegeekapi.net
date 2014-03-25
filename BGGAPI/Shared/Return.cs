@@ -1,15 +1,15 @@
 ﻿namespace BGGAPI.Shared
 {
-    public class Return
+    public interface IReturn
     {
         /// <summary>
         /// Gets or sets the total items.
         /// </summary>
-        public int TotalItems { get; set; }
+        int TotalItems { get; set; }
 
         /// <summary>
         /// Gets or sets the terms of use.
         /// </summary>
-        public string TermsOfUse { get; set; }
+        string TermsOfUse { get; set; }
     }
 }

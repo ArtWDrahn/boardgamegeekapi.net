@@ -21,7 +21,7 @@ namespace BGGAPI.Forums
     ///   See <see cref="BGGAPI.Forums.Return" /> for the return response.
     ///   See <see cref="BGGAPI.Forums.Thread" /> for the individual threads returned.
     /// </summary>
-    public class Return : Shared.Return
+    public class Return : Shared.IReturn
     {
         /// <summary>
         /// Gets or sets the id of the forum.
@@ -58,6 +58,9 @@ namespace BGGAPI.Forums
         /// <summary>
         /// Gets or sets the threads returned in the call.
         /// </summary>
-        public List<Thread> Threads { get; set; } 
+        public List<Thread> Threads { get; set; }
+
+        public int TotalItems { get; set; }
+        public string TermsOfUse { get; set; }
     }
 }
