@@ -60,6 +60,7 @@
     <Compile Include="Forums\Forums\Request.cs" />
     <Compile Include="Forums\Forums\Return.cs" />
     <Compile Include="Forums\Forums\Thread.cs" />
+    <Compile Include="Forums\Threads\Article.cs" />
     <Compile Include="Forums\Threads\Request.cs" />
     <Compile Include="Forums\Threads\Return.cs" />
     <Compile Include="Guilds\Location.cs" />

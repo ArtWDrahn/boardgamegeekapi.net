@@ -1,8 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Return.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   Defines the return object returned in <see cref="Request" />
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace BGGAPI.Threads
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Return : Shared.IReturn
     {
         public int TotalItems { get; set; }
@@ -17,16 +26,5 @@ namespace BGGAPI.Threads
         public string Subject { get; set; }
 
         public List<Article> Articles { get; set; }
-    }
-
-    public class Article
-    {
-        public int ID { get; set; }
-
-        public string UserName { get; set; }
-
-        public Uri Link { get; set; }
-
-        public DateTime PostDate { get; set; }
     }
 }

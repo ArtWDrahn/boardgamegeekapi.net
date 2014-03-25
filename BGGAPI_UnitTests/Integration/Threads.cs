@@ -1,10 +1,20 @@
-﻿using System.Linq;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Threads.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//   Establishes the Threads Integration testing.
+//   This will pull from a specified known good thread and run tests against it.
+//   This should work against any ID but we know it has numofedits to confirm we're getting the correct property.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace BGGAPI_UnitTests.Integration
 {
     using BGGAPI;
     using BGGAPI.Threads;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Linq;
 
     /// <summary>
     /// Summary description for UnitTest1
@@ -20,6 +30,8 @@ namespace BGGAPI_UnitTests.Integration
 
         public static Return ThreadsReturn { get; set; }
 
+        public static Return ThreadsReturnDateTime { get; set; }
+
         /// <summary>
         /// The setup.
         /// </summary>
@@ -30,8 +42,10 @@ namespace BGGAPI_UnitTests.Integration
         public static void Setup(TestContext testContext)
         {
             var client = new Client();
-            var threadsRequest = new Request { ID = 1, MinArticleID = 1, Count = 100};
+            var threadsRequestDateTime = new Request { ID = 1000, MinArticleID = 1, Count = 100, MinArticleDate = "2006-04-02"};
+            var threadsRequest = new Request { ID = 1000, MinArticleID = 1, Count = 100 };
             ThreadsReturn = client.GetThreads(threadsRequest);
+            ThreadsReturnDateTime = client.GetThreads(threadsRequestDateTime);
         }
 
         [TestMethod]
@@ -46,6 +60,15 @@ namespace BGGAPI_UnitTests.Integration
             Assert.IsNotNull(ThreadsReturn.NumArticles);
         }
 
+        /// <summary>
+        /// This test should show us that if we use the MinArticleDate it should return a different number of articles.
+        /// </summary>
+        [TestMethod]
+        public void IntegrationThreadCountIsDifferent()
+        {
+            Assert.IsTrue(ThreadsReturn.Articles.Count() > ThreadsReturnDateTime.Articles.Count());
+        }
+
         [TestMethod]
         public void IntegrationThreadsLinkNotNull()
         {
@@ -57,7 +80,6 @@ namespace BGGAPI_UnitTests.Integration
         {
             Assert.IsNotNull(ThreadsReturn.Subject);
         }
-
 
         [TestMethod]
         public void IntegrationThreadsArticlesNotNull()
@@ -81,6 +103,24 @@ namespace BGGAPI_UnitTests.Integration
         public void IntegrationThreadsPostDateNotNull()
         {
             CollectionAssert.AllItemsAreNotNull(ThreadsReturn.Articles.Select(thread => thread.PostDate).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationThreadsNumEditsNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(ThreadsReturn.Articles.Select(thread => thread.NumEdits).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationThreadsArticleSubjectNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(ThreadsReturn.Articles.Select(thread => thread.Subject).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationThreadsArticleBodyNotNull()
+        {
+            CollectionAssert.AllItemsAreNotNull(ThreadsReturn.Articles.Select(thread => thread.Body).ToList());
         }
     }
 }
