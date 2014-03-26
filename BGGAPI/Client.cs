@@ -161,6 +161,16 @@ namespace BGGAPI
             return CallBGG<Threads.Return>("threads", threadRequest);
         }
 
+        public Plays.Return GetPlays(Plays.Request playRequest)
+        {
+            if (playRequest.ID == null && playRequest.UserName == null)
+            {
+                throw new ArgumentException("ID and UserName are null.");
+            }
+
+            return CallBGG<Plays.Return>("plays", playRequest);
+        }
+
         /// <summary>
         /// Requests information about specific BGG objects
         /// </summary>

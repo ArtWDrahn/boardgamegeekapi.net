@@ -20,7 +20,6 @@ namespace BGGAPI.Plays
         /// </summary>
         public enum FamilyType
         {
-            None,
             thing,
             family,
         }
@@ -69,16 +68,16 @@ namespace BGGAPI.Plays
         /// This ID is for the game itself.
         /// This will be object id in the return item.
         /// </summary>
-        public int ID { get; set; }
+        public int? ID { get; set; }
 
-        public FamilyType Type { get; set; }
+        public FamilyType? Type { get; set; }
 
         public FamilySubType? SubType { get; set; }
 
         /// <summary>
         /// Page size is 100 records.
         /// </summary>
-        public int Page { get; set; }
+        public int? Page { get; set; }
 
         /// <summary>
         /// Needs to bein the YYYY-MM-DD format.
