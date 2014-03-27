@@ -1,11 +1,13 @@
-﻿using System;
-using System.Linq;
-using BGGAPI;
-using BGGAPI.Plays;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Runtime.InteropServices;
 
 namespace BGGAPI_UnitTests.Integration
 {
+    using System.Linq;
+    using BGGAPI;
+    using BGGAPI.Plays;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+
     [TestClass]
     public class Plays
     {
@@ -16,6 +18,8 @@ namespace BGGAPI_UnitTests.Integration
         public TestContext TestContext { get; set; }
 
         public static Return PlaysUserReturn { get; set; }
+
+        public static Return PlaysDateReturn { get; set; }
 
         /// <summary>
         /// The setup.
@@ -29,6 +33,15 @@ namespace BGGAPI_UnitTests.Integration
             var client = new Client();
             var playsUserRequest = new Request { UserName = "tysonjhayes" };
             PlaysUserReturn = client.GetPlays(playsUserRequest);
+
+            var playsUserDateRequest = new Request { UserName = "tysonjhayes", MaxDate = "2014-02-16", MinDate = "2014-02-16", Page = 1 };
+            PlaysDateReturn = client.GetPlays(playsUserDateRequest);
+        }
+
+        [TestMethod]
+        public void IntegrationPlaysMaxMinDateReturnCorrectItems()
+        {
+            Assert.IsTrue(PlaysDateReturn.Total == 5);
         }
 
         [TestMethod]
