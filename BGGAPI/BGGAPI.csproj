@@ -73,8 +73,12 @@
     <Compile Include="Hot\Request.cs" />
     <Compile Include="Hot\Return.cs" />
     <Compile Include="Hot\Thumbnail.cs" />
+    <Compile Include="Plays\Item.cs" />
+    <Compile Include="Plays\Play.cs" />
+    <Compile Include="Plays\Player.cs" />
     <Compile Include="Plays\Request.cs" />
     <Compile Include="Plays\Return.cs" />
+    <Compile Include="Plays\SubType.cs" />
     <Compile Include="Thing\Comments\Comment.cs" />
     <Compile Include="Thing\Comments\CommentRequest.cs" />
     <Compile Include="Thing\Comments\Item.cs" />

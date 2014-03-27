@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGGAPI_UnitTests", "BGGAPI_UnitTests\BGGAPI_UnitTests.csproj", "{A6D12547-CBCA-456D-806C-B752E77E6666}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGGAPI", "BGGAPI\BGGAPI.csproj", "{1DCD7C60-E4E6-431F-B73B-7DEB0007617A}"
