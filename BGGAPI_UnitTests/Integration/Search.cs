@@ -1,4 +1,16 @@
-﻿namespace BGGAPI_UnitTests.Integration
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Search.cs" company="Tyson J. Hayes">
+//   © 2014 - Refer to the License.md for the project.
+// </copyright>
+// <summary>
+//  Integration testing for the Search request.
+//  <see cref="Request"/> for the request code.
+//  <see cref="Return"/> for the returned object.
+//  <see cref="Item"/> for the specific items returned.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BGGAPI_UnitTests.Integration
 {
     using System.Diagnostics;
     using System.Linq;
