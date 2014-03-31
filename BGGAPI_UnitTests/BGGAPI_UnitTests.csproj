@@ -64,6 +64,7 @@
     <Compile Include="Integration\ForumList.cs" />
     <Compile Include="Integration\Guilds.cs" />
     <Compile Include="Integration\Hot.cs" />
+    <Compile Include="Integration\Search.cs" />
     <Compile Include="Integration\Thing\BoardGame.cs" />
     <Compile Include="Integration\Forums.cs" />
     <Compile Include="Integration\Thing\BoardGameComments.cs" />

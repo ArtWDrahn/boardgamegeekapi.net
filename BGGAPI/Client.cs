@@ -271,6 +271,16 @@ namespace BGGAPI
         //    return;
         //}
 
+        public Search.Return SearchBGG(Search.Request searchRequest)
+        {
+            if (searchRequest.Query == null)
+            {
+                throw new ArgumentException("No query given.");
+            }
+
+            return CallBGG<Search.Return>("search", searchRequest);
+        }
+
 
         /// <summary>
         /// Call Board Game Geek.

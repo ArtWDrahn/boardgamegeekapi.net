@@ -79,6 +79,8 @@
     <Compile Include="Plays\Request.cs" />
     <Compile Include="Plays\Return.cs" />
     <Compile Include="Plays\SubType.cs" />
+    <Compile Include="Search\Request.cs" />
+    <Compile Include="Search\Return.cs" />
     <Compile Include="Thing\Comments\Comment.cs" />
     <Compile Include="Thing\Comments\CommentRequest.cs" />
     <Compile Include="Thing\Comments\Item.cs" />
@@ -111,9 +113,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Search\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
