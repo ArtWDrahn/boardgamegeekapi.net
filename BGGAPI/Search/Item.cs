@@ -12,7 +12,7 @@
 
 namespace BGGAPI.Search
 {
-    using BGGAPI.Shared;
+    using Shared;
 
     public class Item
     {
