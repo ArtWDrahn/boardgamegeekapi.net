@@ -14,6 +14,7 @@ namespace BGGAPI
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
     using RestSharp;
 
     /// <summary>
@@ -54,6 +55,24 @@ namespace BGGAPI
             }
 
             return CallBGG<Collection.Return>("collection", collectionRequest);
+        }
+
+        public List<Collection.Item> GetCollectionSorted(Collection.Request collectionRequest)
+        {
+            var collection = GetCollection(collectionRequest);
+            foreach (var item in collection.Items.Where(item => item.Version != null))
+            {
+                // item.Size.Width = Math.Abs(item.Version.Item.Width.value) > 0.1 ? item.Version.Item.Width.value : 0.1;
+                var width =  Math.Abs(item.Version.Item.Width.value) > 0.1 ? item.Version.Item.Width.value : 0.1;;
+                // item.Size.Length = Math.Abs(item.Version.Item.Length.value) > 0.1 ? item.Version.Item.Length.value : 0.1;
+                var length = Math.Abs(item.Version.Item.Length.value) > 0.1 ? item.Version.Item.Length.value : 0.1;
+                // item.Size.Depth = Math.Abs(item.Version.Item.Depth.value) > 0.1 ? item.Version.Item.Depth.value : 0.1;
+                var depth = Math.Abs(item.Version.Item.Depth.value) > 0.1 ? item.Version.Item.Depth.value : 0.1;
+
+                item.Volume = width * length * depth;
+            }
+
+            return collection.Items.OrderByDescending(item => item.Volume).ThenBy(n => n.Name).ToList();
         }
 
         /// <summary>

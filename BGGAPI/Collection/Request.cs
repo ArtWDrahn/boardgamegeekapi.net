@@ -45,8 +45,7 @@
         /// Gets or sets the Version of the Collection Request.
         /// version=1  Returns version info for each item in your collection.
         /// </summary>
-        /// TODO: Figure out what this is doing.
-        // public bool? Version { get; set; }
+        public bool Version { get; set; }
 
         /// <summary>
         /// Gets or sets the type of collection to retrieve.

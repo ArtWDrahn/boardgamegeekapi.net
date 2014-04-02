@@ -48,9 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="Collection\ItemVersion.cs" />
     <Compile Include="Collection\Return.cs" />
     <Compile Include="Collection\Request.cs" />
     <Compile Include="Collection\Item.cs" />
+    <Compile Include="Collection\Size.cs" />
+    <Compile Include="Collection\Version.cs" />
     <Compile Include="Family\Return.cs" />
     <Compile Include="Family\Item.cs" />
     <Compile Include="Family\Request.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="Plays\Request.cs" />
     <Compile Include="Plays\Return.cs" />
     <Compile Include="Plays\SubType.cs" />
+    <Compile Include="Search\Item.cs" />
     <Compile Include="Search\Request.cs" />
     <Compile Include="Search\Return.cs" />
     <Compile Include="Thing\Comments\Comment.cs" />

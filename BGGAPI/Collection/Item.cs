@@ -1,4 +1,7 @@
-﻿namespace BGGAPI.Collection
+﻿using System;
+using System.Collections.Specialized;
+
+namespace BGGAPI.Collection
 {
     /// <summary>
     /// The returned Collection object.
@@ -61,5 +64,9 @@
         /// Gets or sets the number of plays for the game.
         /// </summary>
         public int NumPlays { get; set; }
+
+        public Version Version { get; set; }
+
+        public double Volume { get; set; }
     }
 }

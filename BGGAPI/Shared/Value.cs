@@ -28,6 +28,11 @@
         public float value { get; set; }
     }
 
+    public class DoubleValue
+    {
+        public double value { get; set; }
+    }
+
     public class DateTimeValue
     {
         public DateTime value { get; set; }

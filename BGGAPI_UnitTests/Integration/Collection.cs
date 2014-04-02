@@ -17,6 +17,9 @@ namespace BGGAPI_UnitTests.Integration
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// Integration for the Collection request.
     /// <see cref="Request"/> for the request code.
@@ -47,8 +50,79 @@ namespace BGGAPI_UnitTests.Integration
         public static void Setup(TestContext testContext)
         {
             var client = new Client();
-            var collectionRequest = new Request { UserName = "tysonjhayes" };
+            var ids = new List<int> { 41114 };
+            var collectionRequest = new Request { UserName = "tysonjhayes", Version = true, ID = ids};
             CollectionReturn = client.GetCollection(collectionRequest);
+        }
+
+        /// <summary>
+        /// Integration Collection Version Not Null
+        /// This should tell us if we are getting /any/ version info.
+        /// </summary>
+        [TestMethod]
+        public void IntegrationCollectionVersionNotNull()
+        {
+            Assert.IsTrue(CollectionReturn.Items.Select(items => items.Version).Any());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionThumbnail()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.Thumbnail).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionImage()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.Image).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionName()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.Name).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionLinks()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.Links).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionYearPublished()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.YearPublished).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionProductCode()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.ProductCode).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionWidth()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.Width.value).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionLength()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.Length.value).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionDepth()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.Depth.value).ToList());
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionWeight()
+        {
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Where(items => items.Version != null).Select(items => items.Version).Select(version => version.Item).Select(item => item.Weight).ToList());
         }
 
         /// <summary>
@@ -66,7 +140,7 @@ namespace BGGAPI_UnitTests.Integration
         [TestMethod]
         public void IntegrationCollectionNameIsNotNull()
         {
-            Assert.IsNotNull(CollectionReturn.Items[0].Name);
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Select(item => item.Name).ToList());
         }
 
         /// <summary>
@@ -75,7 +149,7 @@ namespace BGGAPI_UnitTests.Integration
         [TestMethod]
         public void IntegrationCollectionYearIsNotNull()
         {
-            Assert.IsNotNull(CollectionReturn.Items[0].YearPublished);
+            CollectionAssert.AllItemsAreNotNull(CollectionReturn.Items.Select(item =>item.YearPublished).ToList());
         }
 
         /// <summary>
@@ -139,6 +213,15 @@ namespace BGGAPI_UnitTests.Integration
         public void IntegrationCollectionStatusForTradeIsNotNull()
         {
             Assert.IsNotNull(CollectionReturn.Items[0].Status.ForTrade);
+        }
+
+        [TestMethod]
+        public void IntegrationCollectionVersionVolumeSort()
+        {
+            var client = new Client();
+            var collectionRequest = new Request { UserName = "tysonjhayes", Version = true, Own = true };
+            var volume = client.GetCollectionSorted(collectionRequest);
+            Assert.IsTrue(volume[0].Volume > 0);
         }
     }
 }
